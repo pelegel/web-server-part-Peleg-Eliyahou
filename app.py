@@ -20,9 +20,13 @@ def contact_page():
 
 @app.route('/assignment3_1')
 def assignment3_1_page():
-    artists = ('Maroon 5', 'Justin Bieber','Taylor Swift','Lady Gaga', 'Noa Kiler')
-    return render_template('assignment3_1.html',
-                           artists=artists)
+    artists = {'maroon 5': 'Band', 'justin bieber': 'Male singer', 'taylor swift': 'female Singer',
+               'lady gaga': 'Female Singer', 'noa kiler': 'Female Singer'}
+    females = []
+    males = []
+    bands = []
+    tools = ('html', 'css', 'JavaScript','flask')
+    return render_template('assignment3_1.html', artists=artists, tools=tools, females=females, males=males, bands=bands)
 
 
 

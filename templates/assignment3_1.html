@@ -1,20 +1,65 @@
 {% extends 'base.html' %}
 {% block title %}Assignment3_1{% endblock %}
+{% include('assignment3_styles.html') %}
 
 {% block tohen %}
 
     <header id="HeaderA" class="header">
-        <h1>About</h1>
+        <h1>Our Recommendations</h1>
     </header>
 
 
+
+    {% for artist, type in artists.items() %}
+
+        {% if type|lower =="female singer" %}
+            {{ females.append(artist) or "" }}
+
+        {% elif type|lower =="male singer" %}
+            {{ males.append(artist) or "" }}
+
+        {% else %}
+            {{ bands.append(artist) or "" }}
+        {% endif %}
+
+    {% endfor %}
+
+
+
+
+    <br>
     <div class="container">
-        <h2>Favorite Artists</h2>
+        <h2>Female Singers</h2>
         <ul>
-            {% for artist in artists %}
-                <li>{{ artist }}</li>
+            {% for female in females %}
+                <li>{{ female | title()  | indent(60)   }}</li>
             {% endfor %}
         </ul>
     </div>
+    <br>
+
+    <div class="container">
+        <h2>Male Singers</h2>
+        <ul>
+            {% for male in males %}
+                <li>{{ male | title()   }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+
+    <div class="container">
+        <h2>Bands</h2>
+        <ul>
+            {% for band in bands %}
+                <li>{{ band | title()   }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+
+
+    {{ super() }}
+    <br>
 
 {% endblock %}

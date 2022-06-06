@@ -81,8 +81,6 @@ a:hover {
 
 
 
-
-
 /*grid areas - home */
 #Nav {
     grid-area: Nav;
@@ -177,7 +175,8 @@ a:hover {
 #containerContact {
     display: grid;
     margin:50px;
-    grid-template-areas: 
+    text-align: center;
+    grid-template-areas:
     'TopHeader TopHeader TopHeader'
     'nav nav nav'
     'HeaderC HeaderC HeaderC'
@@ -283,17 +282,20 @@ a:hover {
     66% {opacity:0.4;}
 }
 
-
  /*end animation*/
 
 
-
-
-.containerHobbies {
-    border: darkgrey 3px solid;
-    border-radius: 5px;
-    margin: 10px auto;
-    width: 50%;
-    padding: 10px;
-    align-content: center;
+/*super*/
+#base-message {
+    text-align: center;
 }
+/*end super*/
+
+
+/* footer */
+.footer {
+  padding:20px 0;
+  background-color: var(--fucciaPink);
+    text-align: center;
+}
+/* end footer */

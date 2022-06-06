@@ -1,0 +1,10 @@
+
+
+.container {
+    border: var(--fucciaPink) 3px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 20%;
+    padding: 10px;
+    align-content: center;
+}
