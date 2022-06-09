@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Assignment3_2{% endblock %}
+{% include('assignment3_styles.html') %}
+
+{% block tohen %}
+
+    <header class="header">
+        <h1>Search User</h1>
+    </header>
+
+
+
+
+{# --------------------------- search form ----------------------------#}
+<form action="/assignment3_2" method="get">
+    <input type="text" name="email" placeholder="Email"><br>
+    <input type="submit" id="findUserBtn" value="Find User" onclick="printX()"><br><br><br>
+</form>
+
+
+{% if email %}
+<div id="userSearchResults">
+    <h2>The User's Details:</h2>
+    <h4>Username: {{ username }}</h4>
+    <h4>Email: {{ email }}</h4>
+    <h4>Password: {{ user_password }}</h4>
+</div>
+
+{% endif %}
+
+
+{% if users_details %}
+<div class="user_list">
+    <h2 class="header">Users Details:</h2><br>
+    {% for i in range(users_details | length) %}
+    <h3 class="user_list">{{ users_details[i] }}</h3><br>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+{% if message == 'not found' %}
+<h2 class="error">User Not Found</h2>
+{% endif %}
+
+
+{# ........................... end search form ........................#}
+
+
+
+{# ------------------------ registration form -------------------------#}
+<form action="" method="post"></form>
+
+
+
+{# ....................... end registration form ......................#}
+
+
+
+{% endblock %}

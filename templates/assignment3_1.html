@@ -4,7 +4,7 @@
 
 {% block tohen %}
 
-    <header id="HeaderA" class="header">
+    <header class="header">
         <h1>Our Recommendations</h1>
     </header>
 
@@ -12,10 +12,10 @@
 
     {% for artist, type in artists.items() %}
 
-        {% if type|lower =="female singer" %}
+        {% if type| lower() =="female singer" %}
             {{ females.append(artist) or "" }}
 
-        {% elif type|lower =="male singer" %}
+        {% elif type| lower() =="male singer" %}
             {{ males.append(artist) or "" }}
 
         {% else %}
@@ -32,7 +32,7 @@
         <h2>Female Singers</h2>
         <ul>
             {% for female in females %}
-                <li>{{ female | title()  | indent(60)   }}</li>
+                <li>{{ female | title() }}</li>
             {% endfor %}
         </ul>
     </div>
