@@ -10,9 +10,11 @@
         <a href="/contact">Contact</a> |
         <a href="/assignment3_1">Assignment3_1</a> |
         <a href="/assignment3_2">Assignment3_2</a> |
-
-
     </nav>
+
+    {% if session['loggedin'] %}
+        <p id="user_greeting">Welcome, {{ session['username'] | title() }}!</p><br>
+    {% endif %}
 </header>
 
 

@@ -104,6 +104,10 @@ a:hover {
     grid-area: enjoy;
 }
 
+#inputNum {
+    display: inline-block;
+}
+
 #calcTime {
     grid-area: calcTime;
     display: inline-block;
@@ -299,8 +303,8 @@ a:hover {
 
 /* footer */
 .footer {
-  padding:20px 0;
-  background-color: var(--fucciaPink);
+    padding:20px 0;
+    background-color: var(--fucciaPink);
     text-align: center;
 }
 /* end footer */
@@ -317,4 +321,15 @@ a:hover {
 .error {
     text-align: center;
     color: red;
+}
+
+.button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#user_greeting {
+    color: var(--fucciaPink);
+    font-size: 25px;
 }
