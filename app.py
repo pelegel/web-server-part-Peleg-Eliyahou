@@ -14,12 +14,12 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
 @app.route('/')
 @app.route('/home')
 def index_func():
-    return render_template('home.html')
+    return render_template('Home.HTML')
 
 
 @app.route('/contact')
 def contact_page():
-    return render_template('contact.html')
+    return render_template('Contact.HTML')
 
 
 
@@ -68,14 +68,14 @@ def assignment3_2_page():
                 session['username'] = username
                 session['loggedin'] = True
                 return render_template('assignment3_2.html',
-                                           message='Logged in successfully!',
-                                           username=username)
+                                       message='Logged in successfully!',
+                                       username=username)
             else:
                 return render_template('assignment3_2.html',
-                                           message='Wrong password')
+                                       message='Wrong password')
         else:
             return render_template('assignment3_2.html',
-                                       message='Incorrect username')
+                                   message='Incorrect username')
     return render_template('assignment3_2.html')
 
 
